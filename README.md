@@ -1,5 +1,3 @@
 # Portfólio
 
-Um projeto ainda inacabado
-
-  * [Instagram](instagram.com/douglasbarcelloss)
+Um projeto em constante mudança e evolução!
