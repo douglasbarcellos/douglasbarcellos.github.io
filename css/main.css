@@ -189,6 +189,10 @@ p a {
   width: 0;
 }
 
+.progress-bar.c-cplusplus {
+  width: 0;
+}
+
 .progress-bar.git-github {
   width: 0;
 }

@@ -20,7 +20,8 @@ $(document).ready(function(){
     "react": "45%",
     "nodejs-expressjs": "35%",
     "python": "50%",
-    "algoritmo": "80%",
+    "algoritmo": "90%",
+    "c-cplusplus": "30%",
     "git-github": "60%"
   };
 
