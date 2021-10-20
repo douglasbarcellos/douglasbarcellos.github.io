@@ -159,7 +159,7 @@ section {
 
 #btn-about:hover,
 #download-cv:hover {
-  background-color: #0e9aa7;
+  background-color: #fc5d76;
   color: #fff;
 }
 
@@ -169,7 +169,7 @@ section {
 
 #btn-contact:hover {
   color: #fff;
-  background-color: #fe4a49;
+  background-color: #3da4ab;
 }
 
 .download-cv-wrapper {
