@@ -1,1 +1,0 @@
-# douglasbarcellos.github.io

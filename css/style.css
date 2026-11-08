@@ -1,0 +1,133 @@
+:root {
+  --bg: #0a0a0a;
+  --ink: #e8e8e8;
+  --muted: #8d8d8d;
+  --sep: rgb(232 232 232 / 28%);
+  --line: #2a2a2a;
+  --glow: rgb(58 58 58 / 70%);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  background:
+    radial-gradient(520px circle at var(--x, 50%) var(--y, 42%), var(--glow), transparent 62%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Outfit", "Segoe UI", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: clamp(0.75rem, 2vw, 1.25rem);
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+
+main {
+  width: min(34rem, 100%);
+  text-align: center;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(2.8rem, 8vw, 5.25rem);
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  font-optical-sizing: auto;
+}
+
+main > p {
+  max-width: 28ch;
+  margin-top: 1.35rem;
+  margin-inline: auto;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  line-height: 1.45;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem 0.75rem;
+  margin-top: 2.25rem;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 0.28em;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  text-decoration: underline;
+}
+
+nav:hover a:not(:hover):not(:focus-visible) {
+  color: var(--muted);
+}
+
+nav a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.sep {
+  color: var(--sep);
+  user-select: none;
+}
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.js.is-ready [data-reveal] {
+  animation: rise 720ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal],
+  .js.is-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
