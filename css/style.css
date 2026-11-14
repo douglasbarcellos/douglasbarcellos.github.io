@@ -48,9 +48,15 @@ main {
   text-align: center;
 }
 
+body.page-blog {
+  display: block;
+  padding-top: clamp(3rem, 10vh, 5.5rem);
+}
+
 main.blog {
-  width: min(72rem, 100%);
-  container-type: inline-size;
+  width: min(40rem, 100%);
+  margin-inline: auto;
+  text-align: left;
 }
 
 h1,
@@ -88,7 +94,7 @@ nav {
 }
 
 nav a,
-.articles a {
+.blog-back {
   color: inherit;
   text-decoration: none;
   text-underline-offset: 0.28em;
@@ -96,8 +102,8 @@ nav a,
 
 nav a:hover,
 nav a:focus-visible,
-.articles a:hover,
-.articles a:focus-visible {
+.blog-back:hover,
+.blog-back:focus-visible {
   text-decoration: underline;
 }
 
@@ -106,7 +112,7 @@ nav:hover a:not(:hover):not(:focus-visible) {
 }
 
 nav a:focus-visible,
-.articles a:focus-visible {
+.blog-back:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 4px;
 }
@@ -116,38 +122,45 @@ nav a:focus-visible,
   user-select: none;
 }
 
-.articles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem 0;
-  margin: 2.25rem 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.98rem;
+.blog-back {
+  color: var(--muted);
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
-.articles li {
-  white-space: nowrap;
+.blog-header h1 {
+  margin-top: 0.85rem;
 }
 
-.articles li:not(:last-child)::after {
-  content: "|";
-  margin-inline: 0.75rem;
-  color: var(--sep);
+.blog-header p {
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.4vw, 1.2rem);
 }
 
-@container (max-width: 44rem) {
-  .articles {
-    column-gap: 1.15rem;
-  }
+.posts {
+  margin: 2.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
 
-  .articles li:not(:last-child)::after {
-    content: none;
-    margin-inline: 0;
-  }
+.posts article {
+  padding: 1.2rem 0 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.posts li:last-child article {
+  border-bottom: 1px solid var(--line);
+}
+
+.posts h2 {
+  margin: 0;
+  font-family: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  font-optical-sizing: auto;
 }
 
 .js [data-reveal] {
